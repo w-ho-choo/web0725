@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Student {
+      constructor(name, kor, eng, math, sc) {
+        this.name = name;
+        this.kor = kor;
+        this.eng = eng;
+        this.math = math;
+        this.sc = sc;
+      }
+
+      getSum(){
+        return this.kor + this.eng + this.math + this.sc;
+      }
+
+      getAverage(){
+        return this.getSum() / 4
+      }
+
+      toString(){
+        return `${this.name}\t${this.getSum()}Points\t${this.getAverage()}Points\n`
+      }
+    }
+
+    const students = []
+    students.push(new Student('구름',87, 98, 88, 90))
+    students.push(new Student('별이',92, 98, 96, 88))
+    students.push(new Student('겨울',76, 96, 94, 86))
+    students.push(new Student('바다',98, 52, 98, 92))
+
+    let output = `name\tSum\tAve\n`;
+    for (const s of students) {
+      output += s.toString();
+    }
+    console.log(output)
+  </script>
+</body>
+</html>

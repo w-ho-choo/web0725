@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const star = document.querySelector('h1');
+      star.style.fontSize = '6em';
+      star.style.margin = 0;
+      star.style.position = 'absolute';
+
+      let [x, y] = [0, 0];
+      const block = 20;
+      const print = () => {
+        star.style.left = `${x * block}px`
+        star.style.top = `${y * block}px`
+      }
+      print();
+
+      const [left, up, right, down] = [37, 38, 39, 40];
+      document.body.addEventListener('keydown', (e) => {
+        switch (e.keyCode) {
+          case left:
+            x -= 1
+            break
+          case up:
+            y -= 1
+            break
+          case right:
+            x += 1
+            break
+          case down:block
+            y += 1
+            break
+        }
+        print()
+      })
+    })
+  </script>
+  <h1 style="transition: all .35s;">🤣</h1>
+</body>
+</html>

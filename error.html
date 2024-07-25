@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 구문오류(syntax error) : 프로그램 실행전에 발생하는 오류
+    // 예외(exception) 또는 런타임 오류(runtime error) : 프로그램 실행 중에 발생하는 오류
+
+    // Uncaught TypeError: Cannot set property ~~~ : querySeletor로 추출된 문서 객체가 없는경우
+
+    // 고급예외처리
+    // try, catch, finally 구문을 사용해서 예외를 처리한다.
+
+    // try {
+    //  예외가 발생할 가능성이 있는 코드
+    //  try 구문 안에서 예외가 발생하면 더 이상 try구문을 진행하지 않고 catch 구문을 실행
+    // } catch (exception) {
+    //    예외가 발생했을 때 실행할 코드
+    // } finally {l
+    //    무조건 실행할 코드
+    //    예외의 발생 여부와 상관없이 무조건 실행됨
+    // }
+
+    function test(){
+      try {
+        console.log('A Location');
+        throw "Exception Activated" // 예외 강제 발생 구문시키는 throw
+      } catch (exception) {
+        console.log('B Location')
+        return
+      }// finally {
+      //   console.log('D Location')
+      // }
+      console.log('C Location');
+    }
+
+    test();
+  </script>
+</body>
+
+</html>
